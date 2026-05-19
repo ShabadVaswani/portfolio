@@ -19,10 +19,7 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
   const [touched, setTouched] = useState<boolean>(false);
 
   const validateEmail = (email: string): boolean => {
-    if (email === "") {
-      return true;
-    }
-
+    if (email === "") return true;
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(email);
   };
@@ -30,7 +27,6 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setEmail(value);
-
     if (!validateEmail(value)) {
       setError("Please enter a valid email address.");
     } else {
@@ -113,23 +109,13 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
         </Text>
       </Column>
       <form
-        style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-        }}
+        style={{ width: "100%", display: "flex", justifyContent: "center" }}
         action={mailchimp.action}
         method="post"
         id="mc-embedded-subscribe-form"
         name="mc-embedded-subscribe-form"
       >
-        <Row
-          id="mc_embed_signup_scroll"
-          fillWidth
-          maxWidth={24}
-          s={{ direction: "column" }}
-          gap="8"
-        >
+        <Row id="mc_embed_signup_scroll" fillWidth maxWidth={24} s={{ direction: "column" }} gap="8">
           <Input
             formNoValidate
             id="mce-EMAIL"

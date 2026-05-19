@@ -1,0 +1,32 @@
+---
+title: "Egocentric World Memory: Giving AI a Sense of Space"
+publishedAt: "2025-05-10"
+summary: "How integrating OpenCLIP and NeRF-style representations into a pose-aligned memory bank could give embodied AI agents a genuine spatial sense of their environment."
+image: "/images/gallery/horizontal-3.jpg"
+tag: "AI Research / Robotics"
+---
+
+One of the biggest unsolved problems in embodied AI is **spatial memory** — the ability of an agent to remember *where* things are, not just *that* they exist. Current transformer-based models excel at pattern recognition but have no inherent sense of place. This article explores a promising architecture to fix that.
+
+## The Core Problem
+
+When a robot or autonomous agent moves through an environment, it processes each frame in isolation. There is no persistent, structured representation of the space it has already seen. The agent effectively has amnesia about its surroundings the moment something leaves its field of view.
+
+This is fundamentally different from how humans work. When you leave a room, you don't forget where the furniture is. You maintain an **egocentric world model** — a mental map anchored to your own perspective and updated as you move.
+
+## The Proposed Architecture
+
+The solution explored here is a **pose-aligned memory bank** built on two key technologies:
+
+- **OpenCLIP** for rich semantic embeddings of visual observations, enabling the agent to encode *what* it sees in a semantically meaningful way.
+- **NeRF-style (Neural Radiance Field) spatial representations** to encode *where* those observations were captured in 3D space.
+
+By tagging each memory entry with a camera pose (position + orientation), the system can retrieve contextually relevant memories not just by semantic similarity, but by *spatial proximity*. The agent can query: "What did I see near this location before?"
+
+## Why This Matters
+
+This architecture bridges the gap between passive vision models and active, spatially-aware agents. A system with egocentric world memory can navigate previously visited spaces, reason about object permanence, and make predictions about occluded regions — capabilities that are prerequisites for truly general robotics and AR/VR applications.
+
+The implications extend beyond robotics into any domain requiring long-horizon planning in physical environments, from warehouse automation to assistive AI companions.
+
+**[Read the full article on Medium →](https://medium.com/@sdv2034/egocentric-world-memory-giving-ai-a-sense-of-space-f2baf52da6a4)**

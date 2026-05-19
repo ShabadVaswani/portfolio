@@ -1,0 +1,56 @@
+---
+title: "MedAI - Scalable Chest X-Ray Diagnosis"
+publishedAt: "2024-05-01"
+summary: "Deployed Dockerized FastAPI inference containers on Kubernetes, and built a GitOps CI/CD pipeline."
+images:
+  - "/images/gallery/horizontal-1.jpg"
+team:
+  - name: "Shabad Vaswani"
+    role: "Software Engineer"
+    avatar: "/images/shabad-avatar.jpeg"
+    linkedIn: "https://www.linkedin.com/in/shabadvaswani"
+---
+
+<Column fillWidth gap="32">
+  <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">Project Overview</Heading>
+    <Text variant="body-default-m" onBackground="neutral-medium">
+      MedAI is a highly scalable diagnosis system utilizing Machine Learning for advanced Chest X-Ray analysis. The architecture focuses on high availability, rapid inference, and robust CI/CD principles to ensure reliable diagnostic support.
+    </Text>
+    <Button href="https://github.com/Shrey12202/MedAI-Scalable-Diagnosis-with-Machine-Learning" variant="secondary" prefixIcon="github" size="m">
+      View Project Repository
+    </Button>
+  </Column>
+
+  <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">Key Achievements</Heading>
+    <ul style={{ paddingLeft: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">Scalable Deployment:</Text> Deployed Dockerized FastAPI inference containers on a Kubernetes cluster, utilizing pod scaling to handle variable inference loads.
+        </Text>
+      </li>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">Experiment Tracking:</Text> Tracked experiments and model versions with MLflow, integrating training logs and performance metrics.
+        </Text>
+      </li>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">CI/CD Pipeline:</Text> Built a GitOps-style CI/CD pipeline using GitHub Actions for automated validation and redeployment of models.
+        </Text>
+      </li>
+    </ul>
+  </Column>
+
+  <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">Technologies Used</Heading>
+    <Row wrap gap="8">
+      <Button variant="tertiary" size="s">MLflow</Button>
+      <Button variant="tertiary" size="s">GitHub Actions</Button>
+      <Button variant="tertiary" size="s">FastAPI</Button>
+      <Button variant="tertiary" size="s">Docker</Button>
+      <Button variant="tertiary" size="s">Kubernetes</Button>
+    </Row>
+  </Column>
+</Column>

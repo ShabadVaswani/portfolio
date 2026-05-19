@@ -1,5 +1,5 @@
 import { getPosts } from "@/utils/utils";
-import { Column } from "@once-ui-system/core";
+import { Grid } from "@once-ui-system/core";
 import { ProjectCard } from "@/components";
 
 interface ProjectsProps {
@@ -23,21 +23,35 @@ export function Projects({ range, exclude }: ProjectsProps) {
     ? sortedProjects.slice(range[0] - 1, range[1] ?? sortedProjects.length)
     : sortedProjects;
 
+  const pool = [
+    "/images/gallery/horizontal-1.jpg",
+    "/images/gallery/horizontal-2.jpg",
+    "/images/gallery/horizontal-3.jpg",
+    "/images/gallery/horizontal-4.jpg",
+  ];
+  
+  // Shuffle array using Fisher-Yates algorithm for unbiased randomness
+  const shuffledPool = [...pool];
+  for (let i = shuffledPool.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledPool[i], shuffledPool[j]] = [shuffledPool[j], shuffledPool[i]];
+  }
+
   return (
-    <Column fillWidth gap="xl" marginBottom="40" paddingX="l">
-      {displayedProjects.map((post, index) => (
-        <ProjectCard
-          priority={index < 2}
-          key={post.slug}
-          href={`/work/${post.slug}`}
-          images={post.metadata.images}
-          title={post.metadata.title}
-          description={post.metadata.summary}
-          content={post.content}
-          avatars={post.metadata.team?.map((member) => ({ src: member.avatar })) || []}
-          link={post.metadata.link || ""}
-        />
-      ))}
-    </Column>
+    <Grid columns="2" s={{ columns: 1 }} fillWidth marginBottom="40" gap="16">
+      {displayedProjects.map((post, index) => {
+        const randomImage = shuffledPool[index % shuffledPool.length];
+        
+        return (
+          <ProjectCard
+            key={post.slug}
+            href={`/work/${post.slug}`}
+            images={[randomImage]}
+            title={post.metadata.title}
+            description={post.metadata.summary}
+          />
+        );
+      })}
+    </Grid>
   );
 }

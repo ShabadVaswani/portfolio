@@ -1,0 +1,29 @@
+---
+title: "I Took Google's 'Develop Gen AI Apps' Course So You Don't Have To"
+publishedAt: "2025-05-01"
+summary: "A candid breakdown of Google's Gemini + Streamlit + Cloud Run tutorial — what it teaches, what it skips, and the architectural blueprint you can actually use."
+image: "/images/gallery/horizontal-2.jpg"
+tag: "AI / Course Review"
+---
+
+If you've been eyeing Google's **"Develop Gen AI Apps with Gemini and Streamlit"** course on Coursera but weren't sure if it was worth your time, this article is for you.
+
+I went through the entire course so you don't have to sit through hours of setup and boilerplate. Here's an honest breakdown of what it covers, what it glosses over, and — most importantly — the reusable architectural blueprint you can lift directly from it into your own production projects.
+
+## What the Course Actually Teaches
+
+The course is structured around building a conversational AI application using Google's **Gemini API**, a **Streamlit** frontend, and deploying it on **Google Cloud Run**. It's well-paced for beginners and covers the full loop: prompt design → API integration → containerized deployment.
+
+The Gemini API integration feels approachable. You get hands-on experience with multi-turn conversation history, system prompts, and response streaming — things that are genuinely useful in any production gen AI app, not just demo toys.
+
+## The Blueprint Worth Stealing
+
+The most transferable insight from the course is its clean separation of concerns: the **Streamlit app purely handles state and UI**, while all model interaction is abstracted behind a simple Python function. This makes it trivial to swap Gemini for another provider (Groq, Anthropic, etc.) without rewriting your interface.
+
+The Cloud Run deployment pattern — container image → Artifact Registry → Cloud Run service — is Google Cloud's gold standard for serverless inference. If you're building anything from a Slack bot to a document QA tool, this pipeline scales gracefully with zero infrastructure overhead.
+
+## What It Skips
+
+The course doesn't address **authentication**, **rate limiting**, or **cost monitoring** — three things that will hit you the moment you go beyond a personal project. It also skips advanced prompt engineering techniques like few-shot examples and chain-of-thought prompting, which would have been a natural extension of the material.
+
+**[Read the full article on Medium →](https://medium.com/@sdv2034/i-took-googles-develop-gen-ai-apps-course-so-you-don-t-have-to-here-is-the-blueprint-530ea151a62e)**

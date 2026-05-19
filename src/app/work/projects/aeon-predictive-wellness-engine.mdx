@@ -1,0 +1,56 @@
+---
+title: "AEON Predictive Wellness Engine"
+publishedAt: "2024-04-01"
+summary: "A multi-source data pipeline ingesting Garmin biometrics, logs, and APIs into a unified time-series DB."
+images:
+  - "/images/gallery/horizontal-2.jpg"
+team:
+  - name: "Shabad Vaswani"
+    role: "Software Engineer"
+    avatar: "/images/shabad-avatar.jpeg"
+    linkedIn: "https://www.linkedin.com/in/shabadvaswani"
+---
+
+<Column fillWidth gap="32">
+  <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">Project Overview</Heading>
+    <Text variant="body-default-m" onBackground="neutral-medium">
+      AEON is a predictive wellness engine built on a unified time-series database. It intelligently aggregates and synchronizes biometric data, network logs, and environmental APIs to provide comprehensive wellness analytics.
+    </Text>
+    <Button href="https://github.com/ShabadVaswani/BDA-netsec-DataAnalysis" variant="secondary" prefixIcon="github" size="m">
+      View Project Repository
+    </Button>
+  </Column>
+
+  <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">Key Achievements</Heading>
+    <ul style={{ paddingLeft: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">Data Pipeline Architecture:</Text> Co-led the design and development of a multi-source data pipeline ingesting, parsing, and synchronizing Garmin biometrics, router network logs, and weather APIs into 40,971 minute-level records across 30 features.
+        </Text>
+      </li>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">Automated Data Ingestion:</Text> Automated end-to-end Android/Garmin data ingestion via binary `.fit` file parsing and Playwright UI scraping.
+        </Text>
+      </li>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">Data Synchronization:</Text> Temporal alignment merging 3 heterogeneous data sources into a unified time-series database.
+        </Text>
+      </li>
+    </ul>
+  </Column>
+
+  <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">Technologies Used</Heading>
+    <Row wrap gap="8">
+      <Button variant="tertiary" size="s">Python</Button>
+      <Button variant="tertiary" size="s">TensorFlow</Button>
+      <Button variant="tertiary" size="s">Node.js</Button>
+      <Button variant="tertiary" size="s">FastAPI</Button>
+      <Button variant="tertiary" size="s">Transformers</Button>
+    </Row>
+  </Column>
+</Column>
