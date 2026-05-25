@@ -11,6 +11,7 @@ import {
   Meta,
   Schema,
   Row,
+  SmartLink,
 } from "@once-ui-system/core";
 import { baseURL, about, person, social } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
@@ -118,29 +119,32 @@ export default function About() {
             marginBottom="32"
           >
             {about.calendar.display && (
-              <Row
-                fitWidth
-                border="brand-alpha-medium"
-                background="brand-alpha-weak"
-                radius="full"
-                padding="4"
-                gap="8"
-                marginBottom="m"
-                vertical="center"
+              <SmartLink
+                href={about.calendar.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                unstyled
+                fillWidth
                 className={styles.blockAlign}
-                style={{
-                  backdropFilter: "blur(var(--static-space-1))",
-                }}
               >
-                <Icon paddingLeft="12" name="calendar" onBackground="brand-weak" />
-                <Row paddingX="8">Schedule a call</Row>
-                <IconButton
-                  href={about.calendar.link}
-                  data-border="rounded"
-                  variant="secondary"
-                  icon="chevronRight"
-                />
-              </Row>
+                <Row
+                  fitWidth
+                  border="brand-alpha-medium"
+                  background="brand-alpha-weak"
+                  radius="full"
+                  padding="4"
+                  gap="8"
+                  marginBottom="m"
+                  vertical="center"
+                  style={{
+                    backdropFilter: "blur(var(--static-space-1))",
+                  }}
+                >
+                  <Icon paddingLeft="12" name="calendar" onBackground="brand-weak" />
+                  <Row paddingX="8">Schedule a call</Row>
+                  <Icon paddingRight="12" name="arrowRight" onBackground="brand-weak" />
+                </Row>
+              </SmartLink>
             )}
             <Heading className={styles.textAlign} variant="display-strong-xl">
               {person.name}

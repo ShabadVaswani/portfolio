@@ -218,10 +218,36 @@ export interface About extends BasePageConfig {
 export interface Blog extends BasePageConfig {}
 
 /**
+ * A professional certification or skill badge.
+ */
+export interface Certification {
+  /** Display title */
+  title: string;
+  /** Issuing organization */
+  issuer: string;
+  /** When earned, e.g. "May 2026" */
+  issuedAt: string;
+  /** Short description of skills or scope */
+  summary: string;
+  /** Public verification URL (Credly, etc.) */
+  link: string;
+  /** Optional badge image URL */
+  image?: string;
+  /** Optional skill tags */
+  tags?: string[];
+}
+
+/**
  * Work/projects page configuration.
  * @description Configuration for the Work/Projects page, including metadata and navigation label.
  */
-export interface Work extends BasePageConfig {}
+export interface Work extends BasePageConfig {
+  certifications?: {
+    display: boolean;
+    title: string;
+    items: Certification[];
+  };
+}
 
 /**
  * Gallery page configuration.

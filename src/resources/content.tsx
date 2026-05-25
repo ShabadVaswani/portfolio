@@ -95,7 +95,7 @@ const about: About = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://cal.com/shabadvaswani",
   },
   intro: {
     display: true,
@@ -238,8 +238,23 @@ const work: Work = {
   label: "Work",
   title: "Building modern systems and experiences...",
   description: `Explore the projects and case studies by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
+  // Create new project pages by adding a new .mdx file to app/work/projects
   // All projects will be listed on the /home and /work routes
+  certifications: {
+    display: true,
+    title: "Certifications",
+    items: [
+      {
+        title: "Develop GenAI Apps with Gemini and Streamlit",
+        issuer: "Google",
+        issuedAt: "May 2026",
+        summary:
+          "Skill badge for building generative AI applications with the Gemini API, Streamlit UIs, and Google Cloud–backed workflows.",
+        link: "https://www.credly.com/badges/408bcb8e-8b79-46fb-a6bc-579df7c4f7eb/public_url",
+        tags: ["Gemini", "Streamlit", "GenAI", "Google Cloud"],
+      },
+    ],
+  },
 };
 
 const gallery: Gallery = {
