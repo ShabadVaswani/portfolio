@@ -245,6 +245,15 @@ const work: Work = {
     title: "Certifications",
     items: [
       {
+        title: "Environment Administrator",
+        issuer: "Professional Certification",
+        issuedAt: "2026",
+        summary:
+          "Credential recognizing skills in environmental program administration, compliance, and sustainable operations management.",
+        link: "https://www.credly.com/badges/a3420ca4-4d61-4d6a-8fcd-61fb7595c6fb/public_url",
+        tags: ["Environment", "Administration", "Sustainability"],
+      },
+      {
         title: "Develop GenAI Apps with Gemini and Streamlit",
         issuer: "Google",
         issuedAt: "May 2026",
