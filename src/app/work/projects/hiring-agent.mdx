@@ -21,7 +21,7 @@ team:
       <Button href="https://github.com/ShabadVaswani/hiring-agent" variant="secondary" prefixIcon="github" size="m">
         View Project Repository
       </Button>
-      <Button href="https://shabadportfolio.vercel.app/hiring-agent" variant="secondary" prefixIcon="openLink" size="m">
+      <Button href="/hiring-agent" variant="secondary" prefixIcon="openLink" size="m">
         Live Demo
       </Button>
     </Row>
@@ -61,12 +61,17 @@ team:
   <Column fillWidth gap="16">
     <Heading as="h2" variant="heading-strong-l">Live deployment</Heading>
     <Text variant="body-default-m" onBackground="neutral-medium">
-      The app is deployed on Vercel and proxied through this portfolio at <Text as="span" variant="body-strong-m">shabadportfolio.vercel.app/hiring-agent</Text>.
+      The app is proxied through this portfolio on both domains. Use whichever URL you are already on — scoring works on either. GitHub OAuth runs only on the stable Vercel URL.
     </Text>
     <ul style={{ paddingLeft: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
       <li style={{ listStyleType: 'disc' }}>
         <Text variant="body-default-m" onBackground="neutral-strong">
-          <Text as="span" variant="body-strong-m">Public URL:</Text> https://shabadportfolio.vercel.app/hiring-agent
+          <Text as="span" variant="body-strong-m">Custom domain:</Text> https://shabad.sbs/hiring-agent
+        </Text>
+      </li>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">Vercel portfolio:</Text> https://shabadportfolio.vercel.app/hiring-agent
         </Text>
       </li>
       <li style={{ listStyleType: 'disc' }}>
@@ -85,11 +90,11 @@ team:
   <Column fillWidth gap="16">
     <Heading as="h2" variant="heading-strong-l">One-time production setup</Heading>
     <Text variant="body-default-m" onBackground="neutral-medium">
-      Configure GitHub OAuth and Vercel env vars once on the hiring-agent Vercel project. OpenRouter keys are entered by each visitor in the UI — no server env needed for models.
+      Configure GitHub OAuth and Vercel env vars once on the hiring-agent Vercel project. Register OAuth on the stable Vercel portfolio URL only — not shabad.sbs. OpenRouter keys are entered by each visitor in the UI.
     </Text>
     <Heading as="h3" variant="heading-strong-m">Step 1 — GitHub OAuth app</Heading>
     <Text variant="body-default-m" onBackground="neutral-medium">
-      Create an OAuth app at github.com/settings/developers and register:
+      Create an OAuth app at github.com/settings/developers. Use the Vercel portfolio URL only:
     </Text>
     <ul style={{ paddingLeft: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
       <li style={{ listStyleType: 'disc' }}>
@@ -138,10 +143,10 @@ team:
     <Heading as="h3" variant="heading-strong-m">Step 3 — Use the app</Heading>
     <ul style={{ paddingLeft: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
       <li style={{ listStyleType: 'disc' }}>
-        <Text variant="body-default-m" onBackground="neutral-strong">Open https://shabadportfolio.vercel.app/hiring-agent</Text>
+        <Text variant="body-default-m" onBackground="neutral-strong">Open https://shabad.sbs/hiring-agent or https://shabadportfolio.vercel.app/hiring-agent</Text>
       </li>
       <li style={{ listStyleType: 'disc' }}>
-        <Text variant="body-default-m" onBackground="neutral-strong">Click Connect GitHub and authorize</Text>
+        <Text variant="body-default-m" onBackground="neutral-strong">For GitHub enrichment: use the Vercel portfolio URL, click Connect GitHub, and authorize</Text>
       </li>
       <li style={{ listStyleType: 'disc' }}>
         <Text variant="body-default-m" onBackground="neutral-strong">Upload a resume PDF, paste your OpenRouter API key, pick a model, and run the pipeline</Text>
