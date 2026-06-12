@@ -41,12 +41,14 @@ export function Projects({ range, exclude }: ProjectsProps) {
     <Grid columns="2" s={{ columns: 1 }} fillWidth marginBottom="40" gap="16">
       {displayedProjects.map((post, index) => {
         const randomImage = shuffledPool[index % shuffledPool.length];
-        
+        const cardImage =
+          post.metadata.images?.length > 0 ? post.metadata.images[0] : randomImage;
+
         return (
           <ProjectCard
             key={post.slug}
             href={`/work/${post.slug}`}
-            images={[randomImage]}
+            images={[cardImage]}
             title={post.metadata.title}
             description={post.metadata.summary}
           />

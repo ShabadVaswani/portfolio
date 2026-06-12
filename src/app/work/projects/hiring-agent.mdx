@@ -1,0 +1,67 @@
+---
+title: "Hiring Agent – Resume Evaluation Web App"
+publishedAt: "2026-03-01"
+summary: "Open-source resume-to-score pipeline with PDF extraction, GitHub enrichment, and explainable candidate assessments via OpenRouter."
+images:
+  - "/images/projects/hiring-agent.png"
+team:
+  - name: "Shabad Vaswani"
+    role: "Software Engineer"
+    avatar: "/images/shabad-avatar.jpeg"
+    linkedIn: "https://www.linkedin.com/in/shabadvaswani"
+---
+
+<Column fillWidth gap="32">
+  <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">Project Overview</Heading>
+    <Text variant="body-default-m" onBackground="neutral-medium">
+      Hiring Agent is a web app built on HackerRank's open-source resume evaluation pipeline. Upload a PDF resume, pick an LLM via OpenRouter, and run the full extraction, enrichment, and scoring flow — turning unstructured resumes into structured, explainable candidate assessments.
+    </Text>
+    <Row wrap gap="8">
+      <Button href="https://github.com/ShabadVaswani/hiring-agent" variant="secondary" prefixIcon="github" size="m">
+        View Project Repository
+      </Button>
+      <Button href="/hiring-agent" variant="secondary" prefixIcon="openLink" size="m">
+        Live Demo
+      </Button>
+    </Row>
+  </Column>
+
+  <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">Key Achievements</Heading>
+    <ul style={{ paddingLeft: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">Full pipeline UI:</Text> Wrapped the Python resume-to-score pipeline in a Next.js app with PDF upload, model selection, and live score breakdown.
+        </Text>
+      </li>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">Structured scoring:</Text> Surfaces open source, projects, production experience, and technical skills with written evidence and fairness rules that exclude school, GPA, and location.
+        </Text>
+      </li>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">GitHub enrichment:</Text> Fetches and classifies repositories to strengthen project signals before evaluation.
+        </Text>
+      </li>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">Bring your own model:</Text> Runs via OpenRouter with a per-request API key that is never stored server-side.
+        </Text>
+      </li>
+    </ul>
+  </Column>
+
+  <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">Technologies Used</Heading>
+    <Row wrap gap="8">
+      <Button variant="tertiary" size="s">Next.js</Button>
+      <Button variant="tertiary" size="s">TypeScript</Button>
+      <Button variant="tertiary" size="s">Python</Button>
+      <Button variant="tertiary" size="s">OpenRouter</Button>
+      <Button variant="tertiary" size="s">PyMuPDF</Button>
+      <Button variant="tertiary" size="s">GitHub API</Button>
+    </Row>
+  </Column>
+</Column>

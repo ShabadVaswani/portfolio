@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/hiring-agent",
+      "destination": "https://hiring-agent-lilac.vercel.app/hiring-agent"
+    },
+    {
+      "source": "/hiring-agent/:path*",
+      "destination": "https://hiring-agent-lilac.vercel.app/hiring-agent/:path*"
+    }
+  ]
+}
