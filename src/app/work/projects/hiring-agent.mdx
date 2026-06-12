@@ -21,7 +21,7 @@ team:
       <Button href="https://github.com/ShabadVaswani/hiring-agent" variant="secondary" prefixIcon="github" size="m">
         View Project Repository
       </Button>
-      <Button href="/hiring-agent" variant="secondary" prefixIcon="openLink" size="m">
+      <Button href="https://shabad.sbs/hiring-agent" variant="secondary" prefixIcon="openLink" size="m">
         Live Demo
       </Button>
     </Row>
@@ -50,7 +50,106 @@ team:
           <Text as="span" variant="body-strong-m">Bring your own model:</Text> Runs via OpenRouter with a per-request API key that is never stored server-side.
         </Text>
       </li>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">GitHub OAuth:</Text> One-click Connect GitHub flow — no manual token paste. Tokens live in an encrypted httpOnly session cookie.
+        </Text>
+      </li>
     </ul>
+  </Column>
+
+  <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">Live deployment</Heading>
+    <Text variant="body-default-m" onBackground="neutral-medium">
+      The app is deployed on Vercel and proxied through this portfolio at <Text as="span" variant="body-strong-m">shabad.sbs/hiring-agent</Text>.
+    </Text>
+    <ul style={{ paddingLeft: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">Public URL:</Text> https://shabad.sbs/hiring-agent
+        </Text>
+      </li>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">Vercel origin:</Text> https://hiring-agent-lilac.vercel.app/hiring-agent
+        </Text>
+      </li>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">Source repo:</Text> github.com/ShabadVaswani/hiring-agent
+        </Text>
+      </li>
+    </ul>
+  </Column>
+
+  <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">One-time production setup</Heading>
+    <Text variant="body-default-m" onBackground="neutral-medium">
+      Configure GitHub OAuth and Vercel env vars once on the hiring-agent Vercel project. OpenRouter keys are entered by each visitor in the UI — no server env needed for models.
+    </Text>
+    <Heading as="h3" variant="heading-strong-m">Step 1 — GitHub OAuth app</Heading>
+    <Text variant="body-default-m" onBackground="neutral-medium">
+      Create an OAuth app at github.com/settings/developers and register:
+    </Text>
+    <ul style={{ paddingLeft: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">Homepage URL:</Text> https://shabad.sbs/hiring-agent
+        </Text>
+      </li>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">Authorization callback URL:</Text> https://shabad.sbs/hiring-agent/api/auth/github/callback
+        </Text>
+      </li>
+    </ul>
+    <Text variant="body-default-m" onBackground="neutral-medium">
+      Copy the Client ID and generate a Client secret.
+    </Text>
+    <Heading as="h3" variant="heading-strong-m">Step 2 — Vercel environment variables</Heading>
+    <Text variant="body-default-m" onBackground="neutral-medium">
+      In the hiring-agent Vercel project → Settings → Environment Variables, add:
+    </Text>
+    <ul style={{ paddingLeft: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">GITHUB_CLIENT_ID</Text> — from Step 1
+        </Text>
+      </li>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">GITHUB_CLIENT_SECRET</Text> — from Step 1
+        </Text>
+      </li>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">GITHUB_SESSION_SECRET</Text> — long random string (32+ chars)
+        </Text>
+      </li>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">NEXT_PUBLIC_APP_URL</Text> — https://shabad.sbs/hiring-agent (no trailing slash)
+        </Text>
+      </li>
+    </ul>
+    <Text variant="body-default-m" onBackground="neutral-medium">
+      Redeploy after saving env vars.
+    </Text>
+    <Heading as="h3" variant="heading-strong-m">Step 3 — Use the app</Heading>
+    <ul style={{ paddingLeft: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">Open https://shabad.sbs/hiring-agent</Text>
+      </li>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">Click Connect GitHub and authorize</Text>
+      </li>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">Upload a resume PDF, paste your OpenRouter API key, pick a model, and run the pipeline</Text>
+      </li>
+    </ul>
+    <Text variant="body-default-m" onBackground="neutral-medium">
+      Note: Vercel Hobby caps serverless functions at 60 seconds. The full pipeline makes ~8 LLM calls — use a fast model (e.g. Gemini 2.5 Flash Lite) if you hit timeouts.
+    </Text>
   </Column>
 
   <Column fillWidth gap="16">
