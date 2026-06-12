@@ -9,6 +9,21 @@ const withMDX = mdx({
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   transpilePackages: ["next-mdx-remote"],
+  async rewrites() {
+    const hiringAgentOrigin =
+      process.env.HIRING_AGENT_ORIGIN ?? "https://hiring-agent-lilac.vercel.app";
+
+    return [
+      {
+        source: "/hiring-agent",
+        destination: `${hiringAgentOrigin}/hiring-agent`,
+      },
+      {
+        source: "/hiring-agent/:path*",
+        destination: `${hiringAgentOrigin}/hiring-agent/:path*`,
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {
