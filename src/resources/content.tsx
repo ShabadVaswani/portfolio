@@ -114,63 +114,38 @@ const about: About = {
     experiences: [
       {
         company: "IAppSolutions",
-        timeframe: "September 2025 - December 2025",
-        role: "Software Development Engineer Intern",
+        timeframe: "September 2025 - March 2026",
+        role: "Software Engineer",
         achievements: [
-          <>
-            Built a serverless unified API platform on Google Cloud Platform (GCP) using Cloud Run, ensuring scalable video generation across multiple AI providers (Veo, Sora, Kling).
-          </>,
-          <>
-            Dockerized multi-agent Python applications (FastAPI) and implemented CI/CD workflows; managed container registries and orchestrated deployments to ensure consistent production environments.
-          </>,
-          <>
-            Implemented JWT authentication and integrated GCP Secret Manager to securely rotate and manage API credentials for user-specific infrastructure.
-          </>,
+          "Owned delivery of OddlyOptic's AI video platform from architecture and prototyping through cloud deployment.",
+          "Built Python and FastAPI services across AWS and GCP, integrating OpenAI, Claude, Veo, Sora, and Kling behind APIs.",
+          "Shipped React and TypeScript interfaces alongside asynchronous workflows for media generation, review, and operations.",
+          "Built MCP servers and agent tool contracts for provider abstraction and reusable multi-step workflows.",
+          "Added retries, rate limits, circuit breakers, Prometheus metrics, Playwright tests, and CI/CD checks to improve platform reliability.",
+          "Translated client requirements into scoped milestones, production features, and documented handoffs.",
         ],
         images: [],
       },
       {
         company: "Tiny Archives",
         timeframe: "June 2025 - August 2025",
-        role: "Software Development Intern",
+        role: "Software Development Engineer",
         achievements: [
-          <>
-            Contributed to FACTool through structured PR workflow: wrote comprehensive PR descriptions, participated in code reviews, and tracked issues to maintain code quality standards.
-          </>,
-          <>
-            Developed and maintained features in Django and React stack, including PDF and HTML export of metadata-rich content.
-          </>,
+          "Shipped Django, React, and PostgreSQL features for metadata-rich workflows and PDF and HTML exports.",
+          "Optimized PostgreSQL queries and reporting pipelines, reducing query execution time by 20%.",
+          "Improved quality through unit tests, debugging, documented pull requests, reviews, and regression checks.",
         ],
         images: [],
       },
       {
         company: "Arrow Company",
-        timeframe: "January 2024 - May 2024",
-        role: "Project Trainee",
+        timeframe: "May 2023 - June 2024",
+        role: "Associate Software Engineer",
         achievements: [
-          <>
-            Reduced manual financial tracking effort by 80% through automation of income, expense recording, and budget alerts.
-          </>,
-          <>
-            Improved user engagement by 30% via interactive dashboards and real-time analytics using React.js.
-          </>,
-          <>
-            Achieved 99.9% uptime and low-latency user experience by deploying frontend on Vercel and backend services on Render.
-          </>,
-        ],
-        images: [],
-      },
-      {
-        company: "IAppSolutions",
-        timeframe: "January 2023 - May 2023",
-        role: "Software Development Intern",
-        achievements: [
-          <>
-            Integrated GPT-3 API into a SaaS customer support dashboard, automating ticket resolution suggestions and reducing average response time by 25%.
-          </>,
-          <>
-            Engineered context-aware prompts to improve AI response accuracy for technical support queries, directly impacting customer satisfaction scores.
-          </>,
+          "Built React dashboards and automated Python data workflows for operational and financial reporting.",
+          "Developed Spring Boot microservices and REST APIs with Oracle-backed transactional data access.",
+          "Implemented validation, structured logging, exception handling, retries, and production debugging.",
+          "Deployed applications on AWS and documented repeatable operating and support procedures.",
         ],
         images: [],
       },
@@ -178,11 +153,15 @@ const about: About = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Education",
     institutions: [
       {
         name: "New York University",
-        description: <>Master's in Computer Engineering.</>,
+        description: "Master of Science in Computer Engineering, Merit Scholarship.",
+      },
+      {
+        name: "Ganpat University",
+        description: "Bachelor of Technology in Computer Engineering.",
       },
     ],
   },
