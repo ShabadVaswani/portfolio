@@ -5,7 +5,16 @@ import { useEffect, useState } from "react";
 
 import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
 
-import { routes, display, person, about, blog, work, gallery } from "@/resources";
+import {
+  routes,
+  display,
+  person,
+  about,
+  blog,
+  work,
+  papershelf,
+  bookshelf,
+} from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
 
@@ -147,21 +156,62 @@ export const Header = () => {
                   </Row>
                 </>
               )}
-              {routes["/gallery"] && (
+              {routes["/papershelf"] && (
                 <>
                   <Row s={{ hide: true }}>
                     <ToggleButton
-                      prefixIcon="gallery"
-                      href="/gallery"
-                      label={gallery.label}
-                      selected={pathname.startsWith("/gallery")}
+                      prefixIcon="papershelf"
+                      href={papershelf.path}
+                      label={papershelf.label}
+                      selected={pathname === papershelf.path}
                     />
                   </Row>
                   <Row hide s={{ hide: false }}>
                     <ToggleButton
-                      prefixIcon="gallery"
-                      href="/gallery"
-                      selected={pathname.startsWith("/gallery")}
+                      aria-label={papershelf.label}
+                      prefixIcon="papershelf"
+                      href={papershelf.path}
+                      selected={pathname === papershelf.path}
+                    />
+                  </Row>
+                </>
+              )}
+              {routes["/bookshelf"] && (
+                <>
+                  <Row s={{ hide: true }}>
+                    <ToggleButton
+                      prefixIcon="bookshelf"
+                      href={bookshelf.path}
+                      label={bookshelf.label}
+                      selected={pathname === bookshelf.path}
+                    />
+                  </Row>
+                  <Row hide s={{ hide: false }}>
+                    <ToggleButton
+                      aria-label={bookshelf.label}
+                      prefixIcon="bookshelf"
+                      href={bookshelf.path}
+                      selected={pathname === bookshelf.path}
+                    />
+                  </Row>
+                </>
+              )}
+              {routes["/resume"] && (
+                <>
+                  <Row s={{ hide: true }}>
+                    <ToggleButton
+                      prefixIcon="document"
+                      href="/resume"
+                      label="Resume"
+                      selected={pathname === "/resume"}
+                    />
+                  </Row>
+                  <Row hide s={{ hide: false }}>
+                    <ToggleButton
+                      aria-label="Resume"
+                      prefixIcon="document"
+                      href="/resume"
+                      selected={pathname === "/resume"}
                     />
                   </Row>
                 </>

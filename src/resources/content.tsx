@@ -113,39 +113,30 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "IAppSolutions",
-        timeframe: "September 2025 - March 2026",
-        role: "Software Engineer",
+        company: "Zendesk",
+        timeframe: "August 2025 - Present | New York, USA",
+        role: "Generative AI Engineer - AI Agents",
         achievements: [
-          "Owned delivery of OddlyOptic's AI video platform from architecture and prototyping through cloud deployment.",
-          "Built Python and FastAPI services across AWS and GCP, integrating OpenAI, Claude, Veo, Sora, and Kling behind APIs.",
-          "Shipped React and TypeScript interfaces alongside asynchronous workflows for media generation, review, and operations.",
-          "Built MCP servers and agent tool contracts for provider abstraction and reusable multi-step workflows.",
-          "Added retries, rate limits, circuit breakers, Prometheus metrics, Playwright tests, and CI/CD checks to improve platform reliability.",
-          "Translated client requirements into scoped milestones, production features, and documented handoffs.",
+          "Developed generative AI agents with LLMs, RAG, MCP, prompt engineering, tool calling, and context management, improving verified resolution rates by 12% across support conversations.",
+          "Built knowledge workflows with embeddings, vector search, Elasticsearch, reranking, and retrieval pipelines, improving response relevance by 11% across customer interactions.",
+          "Integrated generative procedures, API actions, MCP tools, LLM routing, and human handoffs, enabling 50+ AI agents to manage multi-step customer service requests.",
+          "Created conversation workflows with structured outputs, memory, guardrails, and fallback handling, reducing unsupported or incomplete responses by 10%.",
+          "Implemented GenAI inference services with Python, PyTorch, BentoML, Kubernetes, Docker, AWS, and LLM Proxy for reliable model deployment, routing, and scaling.",
+          "Evaluated AI quality with Braintrust, MLflow, Datadog, CloudWatch, and custom suites covering resolution, relevance, latency, safety, cost, and regressions.",
         ],
         images: [],
       },
       {
-        company: "Tiny Archives",
-        timeframe: "June 2025 - August 2025",
-        role: "Software Development Engineer",
+        company: "S&P Global",
+        timeframe: "March 2022 - May 2024 | Gujarat, India",
+        role: "Machine Learning Engineer - Data Science & Engineering",
         achievements: [
-          "Shipped Django, React, and PostgreSQL features for metadata-rich workflows and PDF and HTML exports.",
-          "Optimized PostgreSQL queries and reporting pipelines, reducing query execution time by 20%.",
-          "Improved quality through unit tests, debugging, documented pull requests, reviews, and regression checks.",
-        ],
-        images: [],
-      },
-      {
-        company: "Arrow Company",
-        timeframe: "May 2023 - June 2024",
-        role: "Associate Software Engineer",
-        achievements: [
-          "Built React dashboards and automated Python data workflows for operational and financial reporting.",
-          "Developed Spring Boot microservices and REST APIs with Oracle-backed transactional data access.",
-          "Implemented validation, structured logging, exception handling, retries, and production debugging.",
-          "Deployed applications on AWS and documented repeatable operating and support procedures.",
+          "Engineered a financial entity-resolution platform that improved entity-matching precision by 18% across high-volume financial data onboarding workflows.",
+          "Developed hybrid NLP ranking models with PyTorch, Transformers, embeddings, semantic similarity, and gradient boosting, processing 2.4M records monthly and reaching 94% top-5 retrieval accuracy.",
+          "Built distributed Python, PySpark, Spark, Azure Data Lake, and Databricks pipelines, reducing data-preparation time by 35% across 15M monthly records.",
+          "Designed Dockerized REST inference services on Azure Kubernetes Service and PostgreSQL, achieving 120 ms p95 latency with production confidence scoring.",
+          "Improved F1-score by 12% through evaluation, threshold tuning, candidate-retrieval optimization, error analysis, and model calibration.",
+          "Operationalized training, inference, versioning, monitoring, drift detection, and retraining with Azure Machine Learning for entity intelligence services spanning 70M companies.",
         ],
         images: [],
       },
@@ -210,6 +201,21 @@ const blog: Blog = {
   description: `Writing on AI research, engineering deep-dives, and what ${person.name} has been exploring`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
+};
+
+const papershelf = {
+  path: "/papershelf",
+  label: "Papershelf",
+  title: "Papershelf",
+  description:
+    "Research papers that shape how I think about AI, systems, and software engineering.",
+};
+
+const bookshelf = {
+  path: "/bookshelf",
+  label: "Bookshelf",
+  title: "Bookshelf",
+  description: "Books that have influenced how I build, learn, and solve problems.",
 };
 
 const work: Work = {
@@ -296,4 +302,15 @@ const gallery: Gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export {
+  person,
+  social,
+  newsletter,
+  home,
+  about,
+  blog,
+  papershelf,
+  bookshelf,
+  work,
+  gallery,
+};

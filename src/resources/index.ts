@@ -6,6 +6,8 @@ export {
   home,
   about,
   blog,
+  papershelf,
+  bookshelf,
   work,
   gallery,
 } from "./content";
