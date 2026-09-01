@@ -59,8 +59,9 @@ const home: Home = {
   image: "/images/og/home.jpg",
   label: "Home",
   title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Software engineer and builder</>,
+  description:
+    "Portfolio of a Generative AI and Machine Learning Engineer with 3+ years of experience.",
+  headline: <>Generative AI &amp; Machine Learning Engineer</>,
   featured: {
     display: true,
     title: (
@@ -76,7 +77,7 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Shabad, a software engineer, I craft intuitive <br /> user experiences and <Text as="span" size="xl" weight="strong">Systems 🚀</Text>. After hours, I like building my own projects.
+      I&apos;m Shabad. For the past 3+ years, I&apos;ve been building <Text as="span" size="xl" weight="strong">AI agents and machine learning systems</Text> designed to solve real-world problems.
     </>
   ),
 };
