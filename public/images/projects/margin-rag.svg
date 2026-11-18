@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#f4f0e8"/>
+<path d="M94 80v740" stroke="#d56143" stroke-width="3"/>
+<text x="140" y="140" font-family="Arial,sans-serif" font-size="24" letter-spacing="6" fill="#68645d">SHABAD VASWANI / AI ENGINEERING</text>
+<text x="140" y="292" font-family="Georgia,serif" font-size="142" fill="#292d29">Margin<tspan fill="#d56143">.</tspan></text>
+<text x="148" y="357" font-family="Arial,sans-serif" font-size="34" fill="#68645d">Ask your documents. Inspect the evidence.</text>
+<rect x="148" y="425" width="850" height="330" rx="20" fill="#fffdf8" stroke="#d7d1c7"/>
+<text x="184" y="481" font-family="Arial,sans-serif" font-size="21" fill="#68645d">RESEARCH WORKSPACE</text>
+<text x="184" y="540" font-family="Georgia,serif" font-size="32" fill="#292d29">Why combine keyword and vector search?</text>
+<path d="M184 580h723M184 614h665M184 648h510" stroke="#dfdbd3" stroke-width="12" stroke-linecap="round"/>
+<rect x="184" y="687" width="198" height="38" rx="19" fill="#f4e6da"/>
+<text x="202" y="713" font-family="Arial,sans-serif" font-size="19" fill="#85442f">[1] Source passage</text>
+<rect x="1030" y="425" width="420" height="330" rx="20" fill="#293b34"/>
+<text x="1065" y="483" font-family="Arial,sans-serif" font-size="22" letter-spacing="3" fill="#e9eddf">EVIDENCE, OPEN</text>
+<text x="1065" y="545" font-family="Georgia,serif" font-size="29" fill="#fffdf8">Hybrid retrieval</text>
+<text x="1065" y="595" font-family="Arial,sans-serif" font-size="23" fill="#cbd4c7">Keyword + vector search</text>
+<text x="1065" y="635" font-family="Arial,sans-serif" font-size="23" fill="#cbd4c7">Streaming answers</text>
+<text x="1065" y="675" font-family="Arial,sans-serif" font-size="23" fill="#cbd4c7">Inspectable citations</text>
+<text x="148" y="825" font-family="Arial,sans-serif" font-size="22" letter-spacing="2" fill="#68645d">C# / .NET 10 / SEMANTIC KERNEL / AZURE AI SEARCH / REACT</text>
+</svg>

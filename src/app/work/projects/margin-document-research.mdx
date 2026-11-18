@@ -1,0 +1,58 @@
+---
+title: "Margin — Document-Grounded AI Research"
+publishedAt: "2026-11-17"
+summary: "A C#/.NET 10 and React research workspace with Semantic Kernel, Azure OpenAI streaming and vision, hybrid Azure AI Search retrieval, and inspectable source passages."
+images:
+  - "/images/projects/margin-rag.svg"
+team:
+  - name: "Shabad Vaswani"
+    role: "Software Engineer"
+    avatar: "/images/shabad-avatar.jpeg"
+    linkedIn: "https://www.linkedin.com/in/shabadvaswani"
+---
+
+<Column fillWidth gap="32">
+  <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">Answers With Evidence in View</Heading>
+    <Text variant="body-default-m" onBackground="neutral-medium">
+      Margin brings document retrieval and conversational AI into one research workspace. Upload Markdown or text, ask a question, and inspect the retrieved passages beside the streamed answer. The interface keeps the evidence visible so that a fluent response is also something a reader can check.
+    </Text>
+    <Button href="https://github.com/ShabadVaswani/margin-rag" variant="secondary" prefixIcon="github" size="m">
+      View Project Repository
+    </Button>
+  </Column>
+
+  <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">From Documents to Grounded Conversation</Heading>
+    <Text variant="body-default-m" onBackground="neutral-medium">
+      The C# backend splits documents into overlapping passages and generates embeddings with Azure OpenAI. Azure AI Search combines a keyword query with vector retrieval, bringing exact terminology and semantic similarity into the same search. Semantic Kernel supplies the retrieved context to the chat model and streams its response to the React interface over Server-Sent Events.
+    </Text>
+    <Text variant="body-default-m" onBackground="neutral-medium">
+      Image attachments extend questions to visual material through a vision-capable Azure OpenAI deployment. Conversation history, answer regeneration, and a source inspector make the workspace useful beyond a single question and response.
+    </Text>
+  </Column>
+
+  <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">Engineering Decisions</Heading>
+    <Text variant="body-default-m" onBackground="neutral-medium">
+      Managed Identity and role-based access connect the hosted application to Azure OpenAI, AI Search, and Cosmos DB without service API keys. Bicep describes the cloud resources and an Entra-authenticated App Service deployment. Conversation storage is separate from the retrieval index, while a credential-free local mode uses SQLite and explicitly labeled extractive responses to exercise the workflow.
+    </Text>
+    <Text variant="body-default-m" onBackground="neutral-medium">
+      Completed turns are saved atomically, while failed or cancelled streams leave conversation history intact. Backend and frontend tests cover these failure paths, with an API smoke test and GitHub Actions checks connecting ingestion, retrieval, citations, and regeneration.
+    </Text>
+  </Column>
+
+  <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">Technologies Used</Heading>
+    <Row wrap gap="8">
+      <Button variant="tertiary" size="s">C# / .NET 10</Button>
+      <Button variant="tertiary" size="s">Semantic Kernel</Button>
+      <Button variant="tertiary" size="s">Azure OpenAI</Button>
+      <Button variant="tertiary" size="s">Azure AI Search</Button>
+      <Button variant="tertiary" size="s">React / TypeScript</Button>
+      <Button variant="tertiary" size="s">Cosmos DB</Button>
+      <Button variant="tertiary" size="s">Managed Identity</Button>
+      <Button variant="tertiary" size="s">Bicep</Button>
+    </Row>
+  </Column>
+</Column>
