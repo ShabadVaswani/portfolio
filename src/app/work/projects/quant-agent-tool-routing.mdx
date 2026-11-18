@@ -1,0 +1,69 @@
+---
+title: "Quant Agent — Tool-Based Financial Analysis"
+publishedAt: "2026-11-07"
+summary: "A Python agent prototype that routes natural-language questions to market-data and quantitative tools, then synthesizes their results into a conversational answer."
+images:
+  - "/images/projects/quant-agent.svg"
+team:
+  - name: "Shabad Vaswani"
+    role: "Software Engineer"
+    avatar: "/images/shabad-avatar.jpeg"
+    linkedIn: "https://www.linkedin.com/in/shabadvaswani"
+---
+
+<Column fillWidth gap="32">
+  <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">Language to Computation</Heading>
+    <Text variant="body-default-m" onBackground="neutral-medium">
+      Quant Agent explores a practical agent architecture: use an LLM to interpret a question and select tools, execute the numerical work in Python, and return the results to the model for explanation. The terminal-based prototype connects market-data retrieval with historical volatility, European option pricing, and simulated Value at Risk calculations.
+    </Text>
+    <Button href="https://github.com/ShabadVaswani/Quant-Agent" variant="secondary" prefixIcon="github" size="m">
+      View Project Repository
+    </Button>
+  </Column>
+
+  <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">The Agent Workflow</Heading>
+    <ol style={{ paddingLeft: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+      <li>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">Route:</Text> The model receives the conversation and tool definitions through OpenRouter, then selects function calls for the user's question.
+        </Text>
+      </li>
+      <li>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">Execute:</Text> A function registry dispatches requested calls to Python. Tool responses are attached to their call IDs in the conversation history.
+        </Text>
+      </li>
+      <li>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">Synthesize:</Text> A follow-up model request uses the returned tool outputs to produce the answer, preserving context for subsequent questions.
+        </Text>
+      </li>
+    </ol>
+  </Column>
+
+  <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">Engineering Decisions</Heading>
+    <Text variant="body-default-m" onBackground="neutral-medium">
+      Financial instruments share an abstract base class, while stock and European option classes encapsulate their calculations. Historical data is loaded into these objects separately from the conversational loop, keeping data retrieval, numerical methods, and model interaction in distinct modules.
+    </Text>
+    <Text variant="body-default-m" onBackground="neutral-medium">
+      The implementation includes annualized log-return volatility, Black-Scholes pricing, and Monte Carlo risk estimation. Input-length limits and exception handling address common terminal, network, and tool-execution failures. The project demonstrates agent orchestration and computational tooling at prototype scope.
+    </Text>
+    <Button href="https://github.com/ShabadVaswani/Quant-Agent/blob/main/main.py" variant="secondary" prefixIcon="github" size="m">
+      Explore the Agent Loop
+    </Button>
+  </Column>
+
+  <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">Technologies Used</Heading>
+    <Row wrap gap="8">
+      <Button variant="tertiary" size="s">Python</Button>
+      <Button variant="tertiary" size="s">OpenRouter</Button>
+      <Button variant="tertiary" size="s">NumPy</Button>
+      <Button variant="tertiary" size="s">pandas</Button>
+      <Button variant="tertiary" size="s">SciPy</Button>
+    </Row>
+  </Column>
+</Column>

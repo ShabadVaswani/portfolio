@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Quant Agent tool orchestration</title>
+  <desc id="desc">A three-stage flow: route a question, execute Python tools, and synthesize results.</desc>
+  <rect width="1280" height="720" fill="#172335"/>
+  <circle cx="1170" cy="60" r="280" fill="#22344b"/>
+  <text x="88" y="106" fill="#9bd8e5" font-family="Arial, sans-serif" font-size="22" letter-spacing="4">AGENTS · PYTHON · COMPUTATION</text>
+  <text x="82" y="224" fill="#edf4f7" font-family="Arial, sans-serif" font-size="100" font-weight="700">Quant Agent</text>
+  <text x="88" y="282" fill="#b8c9da" font-family="Arial, sans-serif" font-size="30">From a question to a tool-backed answer.</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="88" y="380" width="330" height="218" rx="18" fill="#263e56"/>
+    <text x="116" y="428" fill="#9bd8e5" font-size="21">01 / ROUTE</text>
+    <text x="116" y="484" fill="#edf4f7" font-size="29" font-weight="700">Select the tools</text>
+    <text x="116" y="536" fill="#b8c9da" font-size="22">LLM + conversation</text>
+    <path d="M434 490H458" stroke="#9bd8e5" stroke-width="4"/>
+    <rect x="474" y="380" width="330" height="218" rx="18" fill="#d6e7eb"/>
+    <text x="502" y="428" fill="#35566a" font-size="21">02 / EXECUTE</text>
+    <text x="502" y="484" fill="#172335" font-size="29" font-weight="700">Run the numbers</text>
+    <text x="502" y="536" fill="#35566a" font-size="22">Data + Python functions</text>
+    <path d="M820 490H844" stroke="#9bd8e5" stroke-width="4"/>
+    <rect x="860" y="380" width="330" height="218" rx="18" fill="#263e56"/>
+    <text x="888" y="428" fill="#9bd8e5" font-size="21">03 / SYNTHESIZE</text>
+    <text x="888" y="484" fill="#edf4f7" font-size="29" font-weight="700">Explain the results</text>
+    <text x="888" y="536" fill="#b8c9da" font-size="22">Tool outputs + context</text>
+  </g>
+</svg>
