@@ -1,0 +1,65 @@
+---
+title: "Nudgenda — Calendar Planning Assistant"
+publishedAt: "2026-11-06"
+summary: "An Android-first planning prototype combining a daily timeline, conversational interface, and native calendar integration with Expo and React Native."
+images:
+  - "/images/projects/nudgenda.svg"
+team:
+  - name: "Shabad Vaswani"
+    role: "Software Engineer"
+    avatar: "/images/shabad-avatar.jpeg"
+    linkedIn: "https://www.linkedin.com/in/shabadvaswani"
+---
+
+<Column fillWidth gap="32">
+  <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">Planning Around the Calendar</Heading>
+    <Text variant="body-default-m" onBackground="neutral-medium">
+      Nudgenda is an Android-first calendar planning prototype that brings a daily timeline and conversational interface into one experience. It connects to existing calendars so the schedule remains useful beyond the app itself.
+    </Text>
+    <Button href="https://github.com/ShabadVaswani/nudgenda" variant="secondary" prefixIcon="github" size="m">
+      View Project Repository
+    </Button>
+  </Column>
+
+  <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">Engineering Highlights</Heading>
+    <ul style={{ paddingLeft: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">Native calendar integration:</Text> On Android, calendar permissions provide access to the device's synchronized calendars. Event changes use the phone's existing account synchronization to reach Google Calendar.
+        </Text>
+      </li>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">A browser-specific connection:</Text> The web flow uses Google Identity Services and a temporary in-memory access token to call Google Calendar directly.
+        </Text>
+      </li>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">Swappable calendar sources:</Text> Android, Google web, and demo repositories support the same planning experience, with demo events available before a calendar is connected.
+        </Text>
+      </li>
+    </ul>
+  </Column>
+
+  <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">The Product Experience</Heading>
+    <Text variant="body-default-m" onBackground="neutral-medium">
+      The Today view presents tappable schedule blocks and event details. A pull-down gesture opens the full-page chat interface, while calendar settings bring source selection and Android permissions into the app. The calendar workflow supports reading, creating, updating, deleting, and opening system events.
+    </Text>
+    <Text variant="body-default-m" onBackground="neutral-medium">
+      The project combines Expo Router and React Native with dedicated calendar adapters, keeping screen design separate from platform-specific calendar access.
+    </Text>
+  </Column>
+
+  <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">Technologies Used</Heading>
+    <Row wrap gap="8">
+      <Button variant="tertiary" size="s">React Native</Button>
+      <Button variant="tertiary" size="s">Expo</Button>
+      <Button variant="tertiary" size="s">TypeScript</Button>
+      <Button variant="tertiary" size="s">Google Calendar</Button>
+    </Row>
+  </Column>
+</Column>
