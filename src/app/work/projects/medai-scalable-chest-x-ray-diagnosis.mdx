@@ -1,12 +1,12 @@
 ---
 title: "MedAI - Scalable Chest X-Ray Diagnosis"
 publishedAt: "2024-05-01"
-summary: "Deployed Dockerized FastAPI inference containers on Kubernetes, and built a GitOps CI/CD pipeline."
+summary: "Deployment and monitoring for a team-built chest X-ray ML system, connecting model serving, experiment tracking, and delivery workflows."
 images:
   - "/images/gallery/horizontal-1.jpg"
 team:
   - name: "Shabad Vaswani"
-    role: "Software Engineer"
+    role: "Deployment & Monitoring"
     avatar: "/images/shabad-avatar.jpeg"
     linkedIn: "https://www.linkedin.com/in/shabadvaswani"
 ---
@@ -15,7 +15,7 @@ team:
   <Column fillWidth gap="16">
     <Heading as="h2" variant="heading-strong-l">Project Overview</Heading>
     <Text variant="body-default-m" onBackground="neutral-medium">
-      MedAI is a highly scalable diagnosis system utilizing Machine Learning for advanced Chest X-Ray analysis. The architecture focuses on high availability, rapid inference, and robust CI/CD principles to ensure reliable diagnostic support.
+      MedAI is a team-built machine learning project for chest X-ray analysis. My focus was deployment and monitoring: the engineering work that connects trained models to an inference service and makes system behavior observable.
     </Text>
     <Button href="https://github.com/Shrey12202/MedAI-Scalable-Diagnosis-with-Machine-Learning" variant="secondary" prefixIcon="github" size="m">
       View Project Repository
@@ -23,34 +23,46 @@ team:
   </Column>
 
   <Column fillWidth gap="16">
-    <Heading as="h2" variant="heading-strong-l">Key Achievements</Heading>
+    <Heading as="h2" variant="heading-strong-l">My Role in the Team</Heading>
+    <Text variant="body-default-m" onBackground="neutral-medium">
+      I was responsible for deployment and monitoring, collaborating with teammates focused on model development and data preprocessing. The continuous delivery pipeline was a shared team responsibility, bringing those workstreams together across the model lifecycle.
+    </Text>
+  </Column>
+
+  <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">Engineering Highlights</Heading>
     <ul style={{ paddingLeft: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
       <li style={{ listStyleType: 'disc' }}>
         <Text variant="body-default-m" onBackground="neutral-strong">
-          <Text as="span" variant="body-strong-m">Scalable Deployment:</Text> Deployed Dockerized FastAPI inference containers on a Kubernetes cluster, utilizing pod scaling to handle variable inference loads.
+          <Text as="span" variant="body-strong-m">Containerized Serving:</Text> The FastAPI inference service is packaged with Docker Compose. It loads a trained model from MLflow and stores uploaded images and prediction records in MinIO.
         </Text>
       </li>
       <li style={{ listStyleType: 'disc' }}>
         <Text variant="body-default-m" onBackground="neutral-strong">
-          <Text as="span" variant="body-strong-m">Experiment Tracking:</Text> Tracked experiments and model versions with MLflow, integrating training logs and performance metrics.
+          <Text as="span" variant="body-strong-m">Observable Inference:</Text> The API exposes Prometheus metrics and records inference duration with each prediction. The monitoring configuration brings Prometheus, Grafana, and Pushgateway alongside MLflow, PostgreSQL, and MinIO.
         </Text>
       </li>
       <li style={{ listStyleType: 'disc' }}>
         <Text variant="body-default-m" onBackground="neutral-strong">
-          <Text as="span" variant="body-strong-m">CI/CD Pipeline:</Text> Built a GitOps-style CI/CD pipeline using GitHub Actions for automated validation and redeployment of models.
+          <Text as="span" variant="body-strong-m">Shared Delivery Pipeline:</Text> Collaborated on the team's continuous delivery workflow, connecting model updates with deployment and monitoring.
         </Text>
       </li>
     </ul>
+    <Button href="https://github.com/Shrey12202/MedAI-Scalable-Diagnosis-with-Machine-Learning/blob/main/CheXspert%20MLOps/serving/fastapi_pt/app.py" variant="secondary" prefixIcon="github" size="m">
+      Explore the Inference Service
+    </Button>
   </Column>
 
   <Column fillWidth gap="16">
     <Heading as="h2" variant="heading-strong-l">Technologies Used</Heading>
     <Row wrap gap="8">
       <Button variant="tertiary" size="s">MLflow</Button>
-      <Button variant="tertiary" size="s">GitHub Actions</Button>
+      <Button variant="tertiary" size="s">Prometheus</Button>
+      <Button variant="tertiary" size="s">Grafana</Button>
       <Button variant="tertiary" size="s">FastAPI</Button>
       <Button variant="tertiary" size="s">Docker</Button>
-      <Button variant="tertiary" size="s">Kubernetes</Button>
+      <Button variant="tertiary" size="s">Docker Compose</Button>
+      <Button variant="tertiary" size="s">MinIO</Button>
     </Row>
   </Column>
 </Column>
