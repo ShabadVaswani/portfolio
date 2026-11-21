@@ -1,7 +1,7 @@
 ---
-title: "Rarity.AI – Generative NFT Platform"
+title: "Rarity.AI – AI Artwork & NFT Prototype"
 publishedAt: "2024-03-01"
-summary: "A generative NFT platform using Groq, Gemini API, and Ethers.js."
+summary: "An AI artwork and NFT metadata prototype combining prompt refinement, trait scoring, wallet connectivity, and separate ERC-721 contract services."
 images:
   - "/images/gallery/horizontal-3.jpg"
 team:
@@ -15,7 +15,7 @@ team:
   <Column fillWidth gap="16">
     <Heading as="h2" variant="heading-strong-l">Project Overview</Heading>
     <Text variant="body-default-m" onBackground="neutral-medium">
-      Rarity.AI is an innovative platform for generating and minting generative NFTs. It utilizes the latest Large Language Models to refine prompts and generate highly aesthetic token artwork directly onto the blockchain.
+      Rarity.AI explores how AI-assisted creation and NFT tooling fit together. Its React interface guides users through prompt refinement, image generation, and metadata creation, alongside wallet connectivity and separate contract-backed minting and transfer services.
     </Text>
     <Button href="https://github.com/ShabadVaswani/Rarity-AI" variant="secondary" prefixIcon="github" size="m">
       View Project Repository
@@ -23,24 +23,51 @@ team:
   </Column>
 
   <Column fillWidth gap="16">
-    <Heading as="h2" variant="heading-strong-l">Key Achievements</Heading>
+    <Heading as="h2" variant="heading-strong-l">Engineering Highlights</Heading>
     <ul style={{ paddingLeft: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
       <li style={{ listStyleType: 'disc' }}>
         <Text variant="body-default-m" onBackground="neutral-strong">
-          <Text as="span" variant="body-strong-m">Generative AI Integration:</Text> Refined user prompts using Groq LLMs and generated images with the Gemini API.
+          <Text as="span" variant="body-strong-m">Generative AI Integration:</Text> Groq-backed endpoints generate prompt alternatives, names, descriptions, and traits. A Gemini image-generation integration returns artwork for the creation flow.
         </Text>
       </li>
       <li style={{ listStyleType: 'disc' }}>
         <Text variant="body-default-m" onBackground="neutral-strong">
-          <Text as="span" variant="body-strong-m">Web3 Integration:</Text> Integrated Ethers.js to construct and send transactions, with MetaMask SDK handling wallet connection and signature flows.
+          <Text as="span" variant="body-strong-m">Contract Services:</Text> The browser connects through an injected Ethereum wallet provider. Separate Ethers.js services call the ERC-721 contract and await transaction confirmation for minting and transfers.
         </Text>
       </li>
       <li style={{ listStyleType: 'disc' }}>
         <Text variant="body-default-m" onBackground="neutral-strong">
-          <Text as="span" variant="body-strong-m">Containerization:</Text> Containerized frontend and backend with Docker Compose, orchestrating a multi-container environment for consistent, reproducible deployments.
+          <Text as="span" variant="body-strong-m">Local Development:</Text> Docker Compose brings the React frontend and Express backend together with source mounts and separate dependency volumes.
         </Text>
       </li>
     </ul>
+  </Column>
+
+  <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">From Prompt to NFT Metadata</Heading>
+    <ol style={{ paddingLeft: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+      <li>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">Shape the idea:</Text> Enter a text prompt and choose from Groq-generated refinements before creating the artwork.
+        </Text>
+      </li>
+      <li>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">Select the artwork:</Text> Generate images through Gemini or upload an existing image for the NFT workflow.
+        </Text>
+      </li>
+      <li>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">Describe the asset:</Text> Generate a name, description, and traits, then compute a trait score from an explicit lookup table. The score is a prototype heuristic rather than a market valuation.
+        </Text>
+      </li>
+    </ol>
+    <Text variant="body-default-m" onBackground="neutral-medium">
+      The AI creation flow previews minting with a simulated transaction response. The separate contract service implements on-chain calls, while the Solidity contract manages owner-authorized minting, token URIs, and transfers. This distinction keeps the prototype's creative workflow separate from confirmed blockchain transactions.
+    </Text>
+    <Button href="https://github.com/ShabadVaswani/Rarity-AI/blob/main/smart-contract/contracts/SupraNFT.sol" variant="secondary" prefixIcon="github" size="m">
+      Explore the ERC-721 Contract
+    </Button>
   </Column>
 
   <Column fillWidth gap="16">
@@ -51,6 +78,8 @@ team:
       <Button variant="tertiary" size="s">Gemini API</Button>
       <Button variant="tertiary" size="s">Groq</Button>
       <Button variant="tertiary" size="s">Ethers.js</Button>
+      <Button variant="tertiary" size="s">Solidity</Button>
+      <Button variant="tertiary" size="s">Express</Button>
     </Row>
   </Column>
 </Column>
