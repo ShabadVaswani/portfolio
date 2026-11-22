@@ -8,6 +8,7 @@ interface ProjectCardProps {
   images: string[];
   title: string;
   description: string;
+  priority?: boolean;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -15,6 +16,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   images = [],
   title,
   description,
+  priority = false,
 }) => {
   return (
     <Card
@@ -31,7 +33,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     >
       {images.length > 0 && (
         <Media
-          priority
+          priority={priority}
           sizes="(max-width: 768px) 100vw, 640px"
           border="neutral-alpha-weak"
           cursor="interactive"

@@ -49,6 +49,7 @@ export function Projects({ range, exclude }: ProjectsProps) {
             key={post.slug}
             href={`/work/${post.slug}`}
             images={[cardImage]}
+            priority={index < 2}
             title={post.metadata.title}
             description={post.metadata.summary}
           />
