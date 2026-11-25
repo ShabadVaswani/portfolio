@@ -1,7 +1,7 @@
 ---
 title: "AEON Predictive Wellness Engine"
 publishedAt: "2024-04-01"
-summary: "A multi-source data pipeline ingesting Garmin biometrics, logs, and APIs into a unified time-series DB."
+summary: "Wellness analytics combining Garmin biometrics, network activity, and weather, with batch analysis and a Kafka, Spark, and Cassandra streaming prototype."
 images:
   - "/images/gallery/horizontal-2.jpg"
 team:
@@ -15,7 +15,7 @@ team:
   <Column fillWidth gap="16">
     <Heading as="h2" variant="heading-strong-l">Project Overview</Heading>
     <Text variant="body-default-m" onBackground="neutral-medium">
-      AEON is a predictive wellness engine built on a unified time-series database. It intelligently aggregates and synchronizes biometric data, network logs, and environmental APIs to provide comprehensive wellness analytics.
+      AEON brings Garmin biometrics, RouterSense network activity, and weather data into a shared time-series workflow for wellness research. The engineering challenge is aligning sources with different formats and sampling intervals so their relationships can be explored together.
     </Text>
     <Button href="https://github.com/ShabadVaswani/BDA-netsec-DataAnalysis" variant="secondary" prefixIcon="github" size="m">
       View Project Repository
@@ -32,7 +32,7 @@ team:
       </li>
       <li style={{ listStyleType: 'disc' }}>
         <Text variant="body-default-m" onBackground="neutral-strong">
-          <Text as="span" variant="body-strong-m">Automated Data Ingestion:</Text> Automated end-to-end Android/Garmin data ingestion via binary `.fit` file parsing and Playwright UI scraping.
+          <Text as="span" variant="body-strong-m">Automated Data Ingestion:</Text> Parses Garmin FIT files with Python and automates RouterSense downloads with Playwright, giving each source a dedicated ingestion path.
         </Text>
       </li>
       <li style={{ listStyleType: 'disc' }}>
@@ -44,13 +44,43 @@ team:
   </Column>
 
   <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">Batch Analysis and Streaming Architecture</Heading>
+    <Text variant="body-default-m" onBackground="neutral-medium">
+      The repository pairs CSV-based historical analysis with a streaming prototype built around Kafka, Spark Structured Streaming, and Cassandra. Separate ingestion, fusion, and storage components make the data flow inspectable while preserving the existing analysis workflow.
+    </Text>
+    <ul style={{ paddingLeft: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">Source-specific ingestion:</Text> Separate Kafka topics carry Garmin measurements, weather observations, and RouterSense download metadata. Explicit Spark schemas keep each event format visible at the fusion boundary.
+        </Text>
+      </li>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">Time-based fusion:</Text> The Spark job parses timestamps and defines left joins with two-hour watermarks. Its RouterSense input represents hourly download metadata, keeping that granularity distinct from the underlying network records used in batch analysis.
+        </Text>
+      </li>
+      <li style={{ listStyleType: 'disc' }}>
+        <Text variant="body-default-m" onBackground="neutral-strong">
+          <Text as="span" variant="body-strong-m">Storage design:</Text> The job configures CSV and Cassandra outputs with separate checkpoint locations. Cassandra tables partition measurements by device and day, then order records by timestamp.
+        </Text>
+      </li>
+    </ul>
+    <Button href="https://github.com/ShabadVaswani/BDA-netsec-DataAnalysis/blob/main/src/spark/stream_fusion.py" variant="secondary" prefixIcon="github" size="m">
+      Explore the Streaming Pipeline
+    </Button>
+  </Column>
+
+  <Column fillWidth gap="16">
     <Heading as="h2" variant="heading-strong-l">Technologies Used</Heading>
     <Row wrap gap="8">
       <Button variant="tertiary" size="s">Python</Button>
       <Button variant="tertiary" size="s">TensorFlow</Button>
       <Button variant="tertiary" size="s">Node.js</Button>
-      <Button variant="tertiary" size="s">FastAPI</Button>
-      <Button variant="tertiary" size="s">Transformers</Button>
+      <Button variant="tertiary" size="s">Kafka</Button>
+      <Button variant="tertiary" size="s">Spark</Button>
+      <Button variant="tertiary" size="s">Cassandra</Button>
+      <Button variant="tertiary" size="s">Pandas</Button>
+      <Button variant="tertiary" size="s">Playwright</Button>
     </Row>
   </Column>
 </Column>
