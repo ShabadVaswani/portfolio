@@ -2,6 +2,7 @@ import { Column, Meta, Schema } from "@once-ui-system/core";
 
 import { ShelfPage } from "@/components/shelf";
 import { about, baseURL, papershelf, person } from "@/resources";
+import { papers } from "@/resources/papers";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -33,6 +34,7 @@ export default function Papershelf() {
         title={papershelf.title}
         description={papershelf.description}
         itemType="research paper"
+        items={papers}
       />
     </Column>
   );
