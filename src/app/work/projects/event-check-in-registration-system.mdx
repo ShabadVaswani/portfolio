@@ -1,12 +1,12 @@
 ---
 title: "Event Check-In & Registration System"
 publishedAt: "2024-02-01"
-summary: "Next.js platform streamlining event check-in for 400+ attendees."
+summary: "Team-built Next.js event platform with contributions to phone-based registration, attendance tracking, and Google Sheets-backed follow-up workflows."
 images:
   - "/images/gallery/horizontal-4.jpg"
 team:
   - name: "Shabad Vaswani"
-    role: "Software Engineer"
+    role: "Software Engineer · Team Contributor"
     avatar: "/images/shabad-avatar.jpeg"
     linkedIn: "https://www.linkedin.com/in/shabadvaswani"
 ---
@@ -15,7 +15,7 @@ team:
   <Column fillWidth gap="16">
     <Heading as="h2" variant="heading-strong-l">Project Overview</Heading>
     <Text variant="body-default-m" onBackground="neutral-medium">
-      A robust Event Check-In & Registration System built to handle high-volume attendee processing. It features seamless QR-code check-ins and powerful administrative dashboards.
+      A team-built event platform connecting registration, attendance, and follow-up workflows through Next.js and Google Sheets. My contributions span phone-based attendee lookup, registration routes, an attendance interface, and follow-up views for organizers.
     </Text>
     <Button href="https://github.com/Akhil-Raj/gita-life-website" variant="secondary" prefixIcon="github" size="m">
       View Project Repository
@@ -23,31 +23,45 @@ team:
   </Column>
 
   <Column fillWidth gap="16">
-    <Heading as="h2" variant="heading-strong-l">Key Achievements</Heading>
+    <Heading as="h2" variant="heading-strong-l">My Contributions</Heading>
     <ul style={{ paddingLeft: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
       <li style={{ listStyleType: 'disc' }}>
         <Text variant="body-default-m" onBackground="neutral-strong">
-          <Text as="span" variant="body-strong-m">Platform Development:</Text> Developed a Next.js-based platform, actively used to streamline event check-in for 400+ attendees.
+          <Text as="span" variant="body-strong-m">Phone-based registration:</Text> Added a registration page and API routes for looking up an attendee by phone number and marking registration status, connecting the web flow to the existing attendee sheet.
         </Text>
       </li>
       <li style={{ listStyleType: 'disc' }}>
         <Text variant="body-default-m" onBackground="neutral-strong">
-          <Text as="span" variant="body-strong-m">QR-based Self-Registration:</Text> Integrated QR-based self-registration, cutting wait times by 70% and reducing front-desk processing time by 66%.
+          <Text as="span" variant="body-strong-m">Attendance workflow:</Text> Added the attendance page and supporting API work, contributing to the team's event-day check-in interface.
         </Text>
       </li>
       <li style={{ listStyleType: 'disc' }}>
         <Text variant="body-default-m" onBackground="neutral-strong">
-          <Text as="span" variant="body-strong-m">Outreach Efficiency:</Text> Enhanced outreach efficiency, reducing duplicate follow-up calls by 25%, and improving devotee engagement for future events.
+          <Text as="span" variant="body-strong-m">Follow-up coordination:</Text> Added a status view and list endpoints, including filtering attendees by their assigned follow-up owner so organizers can focus on the people they are responsible for contacting.
         </Text>
       </li>
     </ul>
+    <Button href="https://github.com/Akhil-Raj/gita-life-website/commits/main/?author=ShabadVaswani" variant="secondary" prefixIcon="github" size="m">
+      View My Contributions
+    </Button>
+  </Column>
+
+  <Column fillWidth gap="16">
+    <Heading as="h2" variant="heading-strong-l">Working with an Existing Data Workflow</Heading>
+    <Text variant="body-default-m" onBackground="neutral-medium">
+      The shared application uses Google Sheets as its operational data store. Server-side Next.js routes locate columns by header name and read or update the relevant event status. This connects the organizer-facing web interface to a familiar spreadsheet workflow, while keeping registration, attendance, and follow-up responsibilities in separate routes.
+    </Text>
+    <Button href="https://github.com/Akhil-Raj/gita-life-website/blob/main/app/api/get-followupowner-list/route.ts" variant="secondary" prefixIcon="github" size="m">
+      Explore the Follow-Up API
+    </Button>
   </Column>
 
   <Column fillWidth gap="16">
     <Heading as="h2" variant="heading-strong-l">Technologies Used</Heading>
     <Row wrap gap="8">
       <Button variant="tertiary" size="s">Next.js</Button>
-      <Button variant="tertiary" size="s">Google Cloud API</Button>
+      <Button variant="tertiary" size="s">TypeScript</Button>
+      <Button variant="tertiary" size="s">Google Sheets API</Button>
     </Row>
   </Column>
 </Column>
